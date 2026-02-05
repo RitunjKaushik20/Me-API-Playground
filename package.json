@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "app.js",
- "scripts": {
+  "scripts": {
   "build": "npx prisma generate && npx prisma migrate deploy && node prisma/seed.js",
   "start": "node src/server.js",
   "postinstall": "npx prisma generate",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
+    "@prisma/config": "^7.3.0",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
