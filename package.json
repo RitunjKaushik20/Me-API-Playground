@@ -2,13 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "app.js",
-"scripts": {
-  "build": "npx prisma generate && npx prisma migrate deploy && node prisma/seed.js",
-  "start": "node src/server.js",
-  "postinstall": "npx prisma generate",
-  "dev": "nodemon src/server.js",
-  "test": "jest"
-},
+  "scripts": {
+    "build": "npx prisma generate && npx prisma migrate deploy && node prisma/seed.js",
+    "start": "node src/server.js",
+    "postinstall": "npx prisma generate",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
