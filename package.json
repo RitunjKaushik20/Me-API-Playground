@@ -1,35 +1,34 @@
 {
-  "name": "backend",
+  "name": "me-api-playground",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "description": "Full-stack portfolio with Express backend and React frontend",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "build": "npx prisma generate && npx prisma migrate deploy && node prisma/seed.js",
-    "start": "node src/server.js",
-    "postinstall": "npx prisma generate",
-    "dev": "nodemon src/server.js",
-    "test": "jest"
-  },
-  "engines": {
-    "node": "18.x"
-  },
-"dependencies": {
-    "@prisma/client": "5.22.0",
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "express-basic-auth": "^1.2.1",
-    "express-rate-limit": "^8.2.1",
-    "pg": "^8.18.0",
-    "prisma": "5.22.0",
-    "winston": "^3.19.0"
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "test:backend": "cd backend && npm test",
+    "test": "npm run test:backend"
   },
   "devDependencies": {
-    "jest": "^30.2.0",
-    "nodemon": "^3.1.11",
-    "supertest": "^7.2.2"
+    "concurrently": "^8.2.2"
   },
-  "prisma": {
-    "seed": "node prisma/seed.js"
-  }
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "express",
+    "react",
+    "fullstack"
+  ],
+  "author": "Ritunj Kaushik",
+  "license": "MIT"
 }
+
