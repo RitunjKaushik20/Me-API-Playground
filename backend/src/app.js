@@ -19,6 +19,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:8000",
+    "https://me-api-playground-frontend-six.vercel.app",
     ...(process.env.CORS_ORIGINS?.split(",") || [])
   ]
 }))
