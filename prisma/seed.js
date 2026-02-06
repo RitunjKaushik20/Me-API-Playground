@@ -9,7 +9,6 @@ const adapter = new PrismaPg(pool)
 const prisma = new PrismaClient({ adapter })
 
 async function main() {
-  // Clean existing data
   await prisma.project.deleteMany()
   await prisma.skill.deleteMany()
   await prisma.profile.deleteMany()
